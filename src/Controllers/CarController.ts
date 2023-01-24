@@ -15,4 +15,26 @@ export default class CarController {
 
     return res.status(201).json(response);
   }
+
+  public async getAll(_req: Request, res: Response) {
+    const response = await this.service.getAll();
+
+    return res.status(200).json(response);
+  }
+
+  public async getOne(req: Request, res: Response) {
+    const { id } = req.params;
+
+    const mongoIdLength = 24;
+
+    if (id.length !== mongoIdLength) {
+      return res.status(422).json({ message: 'Invalid mongo id' });
+    }
+    const response = await this.service.getOne(id);
+
+    if (!response) {
+      return res.status(404).json({ message: 'Car not found' });
+    }
+    return res.status(200).json(response);
+  }
 }
