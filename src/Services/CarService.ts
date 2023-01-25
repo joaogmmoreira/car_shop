@@ -42,6 +42,5 @@ export default class CarService {
     const response = await carModel.update(id, carData);
     const carDomain = this.createDomain(response);
     return carDomain;
-    // return response;
   }
 }

@@ -44,7 +44,6 @@ export default class CarODM {
       { ...carData },
       { new: true },
     );
-    console.log(response);
     return response;   
   }
 }

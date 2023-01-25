@@ -41,9 +41,7 @@ export default class CarController {
   public async updateOne(req: Request, res: Response) {
     const { id } = req.params;
     const carData = req.body;
-    // console.log(id);
-    // console.log(carData);
-
+    
     const mongoIdLength = 24;
 
     if (id.length !== mongoIdLength) {
