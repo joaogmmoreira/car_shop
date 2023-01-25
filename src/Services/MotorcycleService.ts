@@ -11,36 +11,36 @@ export default class MotorcycleService {
     return null;
   }
 
-  public async createMotorcycle(carData: IMotorcycle) {
+  public async createMotorcycle(motorcycleData: IMotorcycle) {
     const motorcycleModel = new MotorcycleModel();
-    const response = await motorcycleModel.create(carData);
-    const registeredCar = this.createDomain(response);
+    const response = await motorcycleModel.create(motorcycleData);
+    const registeredMotorcycle = this.createDomain(response);
 
-    return registeredCar;
+    return registeredMotorcycle;
   } 
 
   public async getAll() {
     const motorcycleModel = new MotorcycleModel();
     const response = await motorcycleModel.getAll();
-    const carDomain = response.map((element) => {
-      const car = this.createDomain(element);
-      return car;
+    const motorcycleDomain = response.map((element) => {
+      const motorcycle = this.createDomain(element);
+      return motorcycle;
     });
 
-    return carDomain;
+    return motorcycleDomain;
   }
 
   public async getOne(id: string) {
     const motorcycleModel = new MotorcycleModel();
     const response = await motorcycleModel.getOne(id);
-    const carDomain = this.createDomain(response);
-    return carDomain;
+    const motorcycleDomain = this.createDomain(response);
+    return motorcycleDomain;
   }
 
   public async updateOne(id: string, carData: IMotorcycle) {
     const motorcycleModel = new MotorcycleModel();
     const response = await motorcycleModel.update(id, carData);
-    const carDomain = this.createDomain(response);
-    return carDomain;
+    const motorcycleDomain = this.createDomain(response);
+    return motorcycleDomain;
   }
 }
