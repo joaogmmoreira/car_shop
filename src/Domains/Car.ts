@@ -20,17 +20,4 @@ export default class Car {
     this.doorsQty = car.doorsQty;
     this.seatsQty = car.seatsQty;
   }
-
-  // public createDomain(car: ICar) {
-  //   return {
-  //     id: car.id,
-  //     model: car.model,
-  //     year: car.year,
-  //     color: car.color,
-  //     status: car.status || false,
-  //     buyValue: car.buyValue,
-  //     doorsQty: car.doorsQty,
-  //     seatsQty: car.seatsQty,
-  //   };
-  // }
 }

@@ -16,4 +16,8 @@ carRouter.get('/:id', (req, res) => {
   carController.getOne(req, res);
 });
 
+carRouter.put('/:id', (req, res) => {
+  carController.updateOne(req, res);
+});
+
 export default carRouter;
